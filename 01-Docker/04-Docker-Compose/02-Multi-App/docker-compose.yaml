@@ -1,0 +1,19 @@
+---
+
+services:
+  nginx: 
+    image: nginx:latest
+    ports:
+      - '8080:80'
+
+
+
+  myweb1: 
+    image: amitvashist7/k8s-tiny-web
+    ports:
+      - '8081:80'
+
+
+
+  myweb2: 
+    image: amitvashist7/k8s-tiny-web:2

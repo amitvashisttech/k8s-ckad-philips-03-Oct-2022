@@ -1,0 +1,31 @@
+---
+
+services:
+  nginx: 
+    image: nginx:latest
+    networks:
+      - nginxnet
+    ports:
+      - '8080:80'
+    volumes:
+      - mynginx:/var/www/amit
+
+
+  myweb1: 
+    image: amitvashist7/k8s-tiny-web
+    ports:
+      - '8081:80'
+    volumes:
+      - mynginx:/var/www/amit
+      - mytinyweb:/var/www/tiny
+
+
+volumes:
+  mynginx:
+  mytinyweb:    
+
+
+networks:
+  nginxnet:
+    driver: bridge
+
