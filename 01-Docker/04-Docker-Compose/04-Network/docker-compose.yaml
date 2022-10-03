@@ -12,7 +12,9 @@ services:
 
 
   myweb1: 
-    image: amitvashist7/k8s-tiny-web
+    image: amitvashist7/network-multitool
+    networks:
+      - default
     ports:
       - '8081:80'
     volumes:
@@ -28,4 +30,6 @@ volumes:
 networks:
   nginxnet:
     driver: bridge
-
+  default:
+    name: host
+    external: true
