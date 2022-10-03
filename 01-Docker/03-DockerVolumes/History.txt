@@ -1,0 +1,64 @@
+```
+  180  docker volumes ls
+  181  docker volume ls
+  182  cd /var/lib/docker/volumes/my-vol/_data/
+  183  ls
+  184  cat hello.txt
+  185  hostname >> hello.txt
+  186  date >> hello.txt
+  187  cat hello.txt
+  188  docker volume ls
+  189  docker ps
+  190  docker ps -a
+  191  docker kill $(docker ps -q)
+  192  docker rm $(docker ps -qa)
+  193  docker ps
+  194  docker volumes
+  195  docker volume ls
+  196  docker volume ls -q
+  197  docker volume rm $(docker volume ls -q)
+  198  docker volume ls
+  199  docker volume create my-vol
+  200  docker volume ls
+  201  docker volume inspect my-vol
+  202  docker run -it --name vol-test-1 -v my-vol:/myapp busybox
+  203  docker ps
+  204  docker run -it --name vol-test-2 -v my-vol:/myapp busybox
+  205  docker ps
+  206  docker run -it --name vol-test-3 -v my-vol:/myapp:ro busybox
+  207  docker ps
+  208  docker kill $(docker ps -qa)
+  209  docker rm $(docker ps -qa)
+  210  docker ps -a
+  211  docker volume ls
+  212  docker run -it --name vol-test-4 -v /myapp busybox
+  213  docker volume ls
+  214  docker volume inspect 9f997fc08a223847609e199bab54bba35bfd98a82e2a2f4e0b0b66a0fe8aadf7
+  215  cat /var/lib/docker/volumes/9f997fc08a223847609e199bab54bba35bfd98a82e2a2f4e0b0b66a0fe8aadf7/_data/hi.txt
+  216  ls
+  217  docker run -itd --name wwwdata -v /var/lib/amit/ -v /var/www/amit/ -v /etc/amit
+  218  docker run -itd --name wwwdata -v /var/lib/amit/ -v /var/www/amit/ -v /etc/amit busybox
+  219  docker ps
+  220  docker inspect wwwdata
+  221  docker run -itd --name vol-test-01 --volume-from wwwdata busybox
+  222  docker run -itd --name vol-test-01 --volumes-from wwwdata busybox
+  223  docker run -itd --name vol-test-02 --volumes-from wwwdata busybox
+  224  docker run -itd --name vol-test-03 --volumes-from wwwdata busybox
+  225  docker ps
+  226  docker inspect vol-test-01
+  227  docker inspect vol-test-02
+  228  docker inspect vol-test-03
+  229  ls
+  230  docker volumes ls
+  231  docker volume ls
+  232  ls -ltr /var/lib/docker/
+  233  ls -ltr /var/lib/docker/volumes/
+  234  ls
+  235  cd k8s-ckad-philips-03-Oct-2022/
+  236  ls
+  237  pwd
+  238  docker run -it --name vol-test-04 -v /root/k8s-ckad-philips-03-Oct-2022:/myapp busybox
+  239  ls
+  240  docker run -it --name vol-test-05 -v /root/k8s-ckad-philips-03-Oct-2022:/myapp:ro busybox
+  241  ls
+```
