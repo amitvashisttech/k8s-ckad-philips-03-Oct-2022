@@ -1,0 +1,74 @@
+    1  ls
+    2  cd k8s-ckad-philips-03-Oct-2022/
+    3  ls
+    4  cd 01-Docker/
+    5  ls
+    6  vim 00-Setup/install-docker.sh 
+    7  ls
+    8  cd ..
+    9  ls
+   10  git add . ; git commit -m "Docker Install" 
+   11  git config --global --edit
+   12  git add . ; git commit -m "Docker Install" 
+   13  cat /etc/os-release 
+   14  ls
+   15  git clone https://github.com/amitvashisttech/k8s-ckad-philips-03-Oct-2022.git
+   16  ls
+   17  cd k8s-ckad-philips-03-Oct-2022/
+   18  ls
+   19  mkdir 01-Docker
+   20  ls
+   21  cd 01-Docker/
+   22  ls
+   23  mkdir 00-Setup 
+   24  cd 00-Setup/
+   25  ls
+   26  vim install-docker.sh 
+   27  ls
+   28  chmod +x install-docker.sh 
+   29  ./install-docker.sh 
+   30  cd ..
+   31  git config --global credential.helper 'cache --timeout=360000'
+   32  git push 
+   33  ls
+   34  cd ..
+   35  ls
+   36  cd 01-Docker/
+   37  ls
+   38  cd 00-Setup/
+   39  ls
+   40  cd ..
+   41  ls
+   42  docker version 
+   43  docker run busybox echo "Welcome to the world of Docker"
+   44  ls
+   45  docker images 
+   46  docker run -it --name test-1  busybox 
+   47  docker container ls 
+   48  docker container ls -a 
+   49  docker start test-1
+   50  docker container ls 
+   51  docker attach test-1
+   52  docker container ls 
+   53  docker kill test-1 
+   54  docker ps 
+   55  docker container ls 
+   56  docker ps 
+   57  docker ps -a
+   58  docker ps -aq
+   59  docker rm  $(docker ps -aq) 
+   60  docker ps -a 
+   61  docker ps 
+   62  docker run -it --name test-1  busybox 
+   63  docker run -itd --name test-2  busybox 
+   64  ls
+   65  history 
+   66  docker run -d --name my-web-1 amitvashist7/k8s-tiny-web:latest
+   67  docker ps 
+   68  ls
+   69  cd k8s-ckad-philips-03-Oct-2022/
+   70  ls
+   71  cd 01-Docker/
+   72  ls
+   73  mkdir 01-DockerCommands
+   74  history >> 01-DockerCommands/Day1_History.txt 
