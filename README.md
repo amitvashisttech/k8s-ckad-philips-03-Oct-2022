@@ -1,0 +1,1 @@
+# k8s-ckad-philips-03-Oct-2022
