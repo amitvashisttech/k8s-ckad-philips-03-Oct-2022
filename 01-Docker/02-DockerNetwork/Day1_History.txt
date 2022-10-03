@@ -1,0 +1,84 @@
+   83  ls
+   84  docker ps 
+   85  docker network ls 
+   86  docker stop $(docker ps -q) 
+   87  docker ps 
+   88  docker network ls 
+   89  docker inspect 5575adde1b40
+   90  docker network ls 
+   91  docker network inspect a9f6140e8166
+   92  ip addr 
+   93  docker ps -a 
+   94  docker start my-web-1
+   95  docker ps 
+   96  docker network inspect a9f6140e8166
+   97  curl 172.17.0.2
+   98  curl localhost
+   99  apt-get install net-tools -y 
+  100  netstat -tulnp 
+  101  docker run -d --name my-web-2 -p 80:80 amitvashist7/k8s-tiny-web:latest 
+  102  docker ps 
+  103  netstat -tulnp 
+  104  systemctl status docker 
+  105  docker ps 
+  106  docker inspect my-web-2
+  107  curl localhost
+  108  ping ifconfig.me
+  109  curl ifconfig.me
+  110  ls
+  111  docker ps 
+  112  docker kill my-web-2
+  113  docker run -d --name my-web-2 -p 80:80 amitvashist7/k8s-tiny-web:2
+  114  docker run -d --name my-web-3 -p 80:80 amitvashist7/k8s-tiny-web:2
+  115  docker ps 
+  116  history 
+  117  docker stop my-web-3
+  118  docker run -d --name my-web-4 -p 80:80 amitvashist7/k8s-tiny-web:3
+  119  docker ps 
+  120  docker run -d --name my-web-5 -p 80:80 amitvashist7/k8s-tiny-web:4
+  121  docker run -d --name my-web-6 -P amitvashist7/k8s-tiny-web:4
+  122  docker ps 
+  123  curl localhost:49153
+  124  docker inspect 4f5c15f12926
+  125  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' my-web-4
+  126  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -q)
+  127  docker network ls 
+  128  docker network create --help 
+  129  docker network create --driver=bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24 --gateway=172.28.5.254 mybr0
+  130  docker network ls 
+  131  docker run -d --name nginx-1 --network mybr0 -P nginx 
+  132  docker ps 
+  133  curl localhost:49154
+  134  docker inspect ab78ee6750f4
+  135  docker network ls 
+  136  docker network inspect mybr0
+  137  docker run -d --name nginx-2 --network mybr0 -P nginx 
+  138  docker network inspect mybr0
+  139  docker run -d --name test-1 --network mybr0 amitvashist7/network-multitool
+  140  docker run -d --name test-nw-1 --network mybr0 amitvashist7/network-multitool
+  141  docker ps 
+  142  docker exec -it test-nw-1 ifconfig
+  143  docker run -d --name test-nw-2 amitvashist7/network-multitool
+  144  docker exec -it test-nw-2 ifconfig
+  145  docker run -d --name test-nw-3 --network none amitvashist7/network-multitool
+  146  docker exec -it test-nw-3 ifconfig
+  147  ip addr 
+  148  docker run -d --name test-nw-4 --network host amitvashist7/network-multitool
+  149  docker exec -it test-nw-4 ifconfig
+  150  ip addr 
+  151  docker ps 
+  152  docker run -d --name test-nw-4 --network host amitvashist7/network-multitool
+  153  docker kill $(docker ps -q) 
+  154  docker run -d --name test-nw-5 --network host amitvashist7/network-multitool
+  155  docker ps 
+  156  docker exec -it test-nw-5 ifconfig
+  157  ip addr 
+  158  netstat -tulnp 
+  159  ls
+  160  cd k8s-ckad-philips-03-Oct-2022/
+  161  ls
+  162  cd 01-Docker/
+  163  ls
+  164  mkdir 02-DockerNetwork
+  165  cat 01-DockerCommands/Day1_History.txt 
+  166  history >> 02-DockerNetwork/Day1_History.txt 
