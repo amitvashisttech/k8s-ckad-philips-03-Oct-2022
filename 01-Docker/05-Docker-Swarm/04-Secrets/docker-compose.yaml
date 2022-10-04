@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  web:
+    image: nginx
+    secrets:                    # secrets block only for 'web' service
+     - my_secret
+     - my_file_secret
+
+secrets:                        # top level secrets block
+  my_secret:
+    external: true
+  my_file_secret:
+    file: my_file_secret.txt
